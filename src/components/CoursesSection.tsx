@@ -4,7 +4,7 @@ const courses = [
   {
     title: 'Java Fullstack',
     description: 'Java leads in banking, insurance, logistics, transport, retail & more. It assures jobs worldwide. Learn from us with clarity and depth.',
-    logo: '☕',
+    logo: '♨️',
     gradient: 'from-orange-400 to-red-500'
   },
   { 
