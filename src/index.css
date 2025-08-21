@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Hero Animations */
+  @keyframes hero-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes ken-burns {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  .animate-hero-fade-up {
+    animation: hero-fade-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-hero-fade-up-delay-1 {
+    animation: hero-fade-up 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  
+  .animate-hero-fade-up-delay-2 {
+    animation: hero-fade-up 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+  
+  .animate-ken-burns {
+    animation: ken-burns 20s ease-in-out infinite alternate;
+  }
+  
+  /* Scroll Animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .animate-on-scroll.fade-in {
+    transform: translateY(20px);
+  }
+  
+  .animate-on-scroll.slide-in-left {
+    transform: translateX(-30px);
+  }
+  
+  .animate-on-scroll.slide-in-right {
+    transform: translateX(30px);
+  }
+  
+  .animate-on-scroll.scale-in {
+    transform: scale(0.9) translateY(20px);
+  }
+  
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  
+  /* Smooth transitions for all interactive elements */
+  button, a, .glass-card {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #14b8a6;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0d9488;
+  }
+  
+  /* Enhanced focus styles */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible {
+    outline: 2px solid #14b8a6;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
